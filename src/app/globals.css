@@ -1,0 +1,27 @@
+:root {
+  --bg-primary: black;
+  --fg-primary: white;
+  --bg-secondary: grey;
+  --fg-secondary: lightgrey;
+  --accent-primary: rgb(123, 0, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
+}
+
+.container {
+  width: 80%;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

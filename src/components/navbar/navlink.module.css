@@ -1,0 +1,30 @@
+.link {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: var(--fg-primary);
+  margin: 0 0.5rem;
+  padding: 0.2rem 1rem;
+  border-radius: 18px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.link > a {
+  text-decoration: none;
+  color: var(--fg-primary);
+}
+.login {
+  background-color: var(--bg-secondary);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+}
+
+.signup {
+  border: 1px solid var(--bg-secondary);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+}
+
+.active {
+  background-color: var(--accent-primary);
+}
