@@ -10,7 +10,7 @@ const NavLink = ({ title, path }) => {
     <div
       className={`${styles.link} ${pathname === path && styles.active} ${
         (title === "login" || title === "logout") && styles.login
-      } ${title === "signup" && styles.signup}`}
+      } ${title === "signup" ? styles.signup : ""}`}
     >
       <Link href={path}>{title}</Link>
     </div>

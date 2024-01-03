@@ -2,11 +2,10 @@
   display: flex;
   align-items: center;
   text-transform: capitalize;
-  color: var(--fg-primary);
-  margin: 0 0.5rem;
-  padding: 0.2rem 1rem;
+  margin: 0 0.2rem;
+  padding: 0.5rem 1rem;
   border-radius: 18px;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s;
 }
 
 .link > a {
@@ -14,17 +13,17 @@
   color: var(--fg-primary);
 }
 .login {
-  background-color: var(--bg-secondary);
-  padding: 0.6rem 0.8rem;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
   border-radius: 8px;
 }
 
 .signup {
-  border: 1px solid var(--bg-secondary);
+  border: 1px solid hsl(var(--border));
   border-radius: 8px;
-  padding: 0.6rem 0.8rem;
 }
 
 .active {
-  background-color: var(--accent-primary);
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
 }
