@@ -1,7 +1,16 @@
 import Author from "@/components/blog/author";
+import { getPostById } from "@/lib/appwriteConfig";
 import Image from "next/image";
 
-const page = () => {
+const formatDate = (date) => {
+  return date.slice(0, 10);
+};
+
+const SingleBlogPage = async ({ params }) => {
+  const singlePost = await getPostById(params.slug);
+  const { title, author, body, $createdAt } = singlePost;
+
+  const formatedDate = formatDate($createdAt);
   return (
     <section className="flex gap-16 ">
       <div className="flex-1 h--auto max-h-screen relative rounded-lg overflow-hidden mx-auto">
@@ -13,23 +22,12 @@ const page = () => {
         />
       </div>
       <div className="flex flex-1 flex-col gap-6">
-        <h1 className="text-5xl font-semibold ">Title</h1>
-        <p className="text-sm font-light">~Date</p>
-        <Author />
-        <p className="text-lg">
-          Aliqua duis sit dolore adipisicing sint eiusmod officia sunt veniam
-          ullamco fugiat velit eiusmod do culpa cupidatat do incididunt esse do
-          nulla sit proident labore voluptate. Amet incididunt ex ut dolor enim
-          laboris cupidatat cillum laboris exercitation quis proident pariatur
-          proident cupidatat consectetur proident sit eu veniam ut consequat
-          magna esse nisi laborum nostrud laborum. Commodo laboris mollit labore
-          in ex qui occaecat laborum ullamco duis magna ea non nulla minim do
-          elit laborum ut eiusmod aute eiusmod. Lorem cupidatat et ad occaecat
-          ut exercitation. Labore consequat voluptate duis magna ullamco labore
-          excepteur aute et qui id duis quis anim pariatur voluptate ad
-        </p>
+        <h1 className="text-5xl font-semibold ">{title}</h1>
+        <p className="text-sm font-light">~{formatedDate}</p>
+        <Author name={author} />
+        <p className="text-lg">{body}</p>
       </div>
     </section>
   );
 };
-export default page;
+export default SingleBlogPage;

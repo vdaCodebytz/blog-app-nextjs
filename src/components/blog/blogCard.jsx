@@ -4,10 +4,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const BlogCard = () => {
+const BlogCard = ({ title, description, id }) => {
   const router = useRouter();
-  const handleClick = (slug) => {
-    router.push(`/blog/${slug}`);
+  const handleClick = (id) => {
+    router.push(`/blog/${id}`);
   };
 
   return (
@@ -23,12 +23,12 @@ const BlogCard = () => {
         </div>
       </CardHeader>
       <CardContent>
-        <h2 className="text-2xl font-semibold mt-2">Title</h2>
-        <p className="mt-2 font-light text-sm">Description</p>
+        <h2 className="text-2xl font-semibold mt-2">{title}</h2>
+        <p className="mt-2 font-light text-sm">{description}</p>
         <Button
           className="mt-2"
           onClick={() => {
-            handleClick("title");
+            handleClick(id);
           }}
         >
           Read More

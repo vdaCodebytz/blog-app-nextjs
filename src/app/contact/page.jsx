@@ -1,4 +1,6 @@
+import NotReady from "@/components/notReady";
+
 const LoginPage = () => {
-  return <div>LoginPage</div>;
+  return <NotReady />;
 };
 export default LoginPage;
